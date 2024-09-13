@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="login-form">
+
+    <img src="assets/images/logo serviexpress.webp" alt="Logo ServiExpress" class="logo" />
+
+    <h2 class="title">Recuperar Contraseña</h2>
+
+    <div>
+      <mat-form-field class="example-form-field">
+        <mat-label>Usuario</mat-label>
+        <input matInput type="text" [(ngModel)]="username">
+        @if (username === '') {
+        <mat-error>El campo Usuario es requerido</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="center-items">
+      <button mat-flat-button (click)="Rec()" [disabled]="!isFormValid()">Recuperar</button>
+    </div>
+  </div>
+</div>
