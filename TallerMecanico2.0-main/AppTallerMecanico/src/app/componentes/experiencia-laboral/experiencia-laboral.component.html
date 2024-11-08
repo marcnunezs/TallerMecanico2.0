@@ -1,0 +1,24 @@
+
+HTML
+<ion-content>
+  <h2>Experiencia Laboral</h2>
+  <form [formGroup]="experienciaForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Empresa</mat-label>
+      <input matInput type="text" formControlName="empresa">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Año inicio</mat-label>
+      <input matInput type="number" formControlName="anoInicio">
+    </mat-form-field>
+    <mat-checkbox formControlName="trabajandoActualmente">Actualmente trabajando</mat-checkbox>
+    <mat-form-field appearance="outline" *ngIf="! experienciaForm.get('trabajandoActualmente')?.value">
+      <mat-label>Año término</mat-label>
+      <input matInput type="number" formControlName="anoTermino">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Cargo</mat-label>
+      <input matInput type="text" formControlName="cargo">
+    </mat-form-field>
+  </form>
+</ion-content>

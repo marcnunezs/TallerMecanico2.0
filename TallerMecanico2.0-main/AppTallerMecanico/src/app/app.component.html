@@ -1,0 +1,13 @@
+<!-- parent.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Parent Component</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink]="['/parent/child1']">Ir a Child 1</ion-button>
+  <ion-button [routerLink]="['/parent/child2']">Ir a Child 2</ion-button>
+
+  <router-outlet></router-outlet>
+</ion-content>

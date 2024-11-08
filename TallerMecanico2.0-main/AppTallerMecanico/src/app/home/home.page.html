@@ -1,0 +1,20 @@
+<div class="welcome-container">
+  <h1>¡Bienvenido, {{ username }}!</h1>
+  <p>Nos alegra verte nuevamente. ¡Esperamos que disfrutes de tu tiempo aquí!</p>
+</div>
+
+<mat-button-toggle-group [(ngModel)]="selectedSegment">
+  <mat-button-toggle value="mis-datos">Mis Datos</mat-button-toggle>
+  <mat-button-toggle value="experiencia-laboral">Experiencia Laboral</mat-button-toggle>
+  <mat-button-toggle value="certificaciones">Certificaciones</mat-button-toggle>
+</mat-button-toggle-group>
+
+<ng-container *ngIf="selectedSegment === 'mis-datos'">
+  <app-mis-datos></app-mis-datos>
+</ng-container>
+<ng-container *ngIf="selectedSegment === 'experiencia-laboral'">
+  <app-experiencia-laboral></app-experiencia-laboral>
+</ng-container>
+<ng-container *ngIf="selectedSegment === 'certificaciones'">
+  <app-certificaciones></app-certificaciones>
+</ng-container>
