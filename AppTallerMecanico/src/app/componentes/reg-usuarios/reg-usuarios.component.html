@@ -1,0 +1,32 @@
+<ion-content>
+  <div>
+    <h2>Agregar Usuario</h2>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput [(ngModel)]="email" type="email"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [(ngModel)]="password" type="password"/>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="addUser()">Agregar Usuario</button>
+
+      <hr />
+
+      <h2>Usuario Actual</h2>
+
+      <div *ngIf="user; else noUser">
+        <p>Correo: {{ user.email }} </p>
+
+        <button mat-raised-button color="warn" (click)="deleteUser()">Eliminar Usuario</button>
+      </div>
+
+      <ng-template #noUser>
+        <p>No hay usuario autenticado.</p>
+      </ng-template>
+
+  </div>
+</ion-content>

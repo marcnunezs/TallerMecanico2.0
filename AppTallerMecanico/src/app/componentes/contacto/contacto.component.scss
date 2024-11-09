@@ -1,0 +1,64 @@
+/* General */
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    /* Fondo claro */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    /* Fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título */
+.contact-container h2 {
+    font-size: 2em;
+    color: #4CAF50;
+    /* Color verde */
+    margin-bottom: 20px;
+}
+
+/* Estilos de formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Campos de entrada */
+mat-form-field {
+    width: 100%;
+}
+
+mat-label {
+    color: rgb(0, 0, 0);
+}
+input {
+    color: #ffffff;
+    /* Texto oscuro */
+}
+
+/* Botones */
+button.mat-raised-button {
+    margin-top: 20px;
+    align-self: center;
+}
+
+button.mat-raised-button[color="primary"] {
+    color: #fff;
+    /* Texto blanco */
+    background-color: #4CAF50;
+    /* Botón verde */
+}

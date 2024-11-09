@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="login-form">
 
@@ -8,20 +9,17 @@
     <div>
       <mat-form-field class="example-form-field">
         <mat-label>Usuario</mat-label>
-        <input matInput type="text" [(ngModel)]="username">
-        @if (username === '') {
-          <mat-error>El campo Usuario es requerido</mat-error>
-        }
+        <input matInput type="text" [(ngModel)]="usuario" name="usuario" required>
+          <mat-error *ngIf="errors.includes('Usuario es requerido')">El campo Usuario es requerido</mat-error>
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field>
         <mat-label>Contraseña</mat-label>
-        <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" />
-        @if (password === '') {
-          <mat-error>El campo Contraseña es requerido</mat-error>
-        }
+        <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" name="password" required minlength="6"/>
+          <mat-error *ngIf="errors.includes('Contraseña es requerida')">El campo Contraseña es requerido</mat-error>
+          <mat-error *ngIf="errors.includes('La contraseña de contener mas de 6 caracteres')">La contraseña debe contener mas de 6 caracteres</mat-error>
         <button
           mat-icon-button
           matSuffix
@@ -37,7 +35,9 @@
     <div class="center-items">
       <a mat-button [routerLink]="['/rec-pass']">Recuperar Contraseña</a>
 
-      <button mat-flat-button (click)="Login()" [disabled]="!isFormValid()">Iniciar sesión</button>
+      <button mat-flat-button type="submit" (click)="login()">Iniciar sesión</button>
     </div>
   </div>
+  
 </div>
+>>>>>>> Stashed changes

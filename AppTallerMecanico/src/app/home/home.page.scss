@@ -1,6 +1,5 @@
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -16,9 +15,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -31,18 +28,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
   background-color: #f4f4f4;
+  padding: 20px; /* Reducir el espacio general */
+  margin-top: 20px; /* Espacio opcional para separación */
 }
 
-.welcome-container h1 {
-  font-size: 2.5em;
+.welcome-container h3 {
+  font-size: 1.5em; /* Reducido para mantenerlo como un subtítulo */
   color: #4CAF50;
-  margin-bottom: 10px;
+  margin: 5px 0; /* Reducir espacio vertical */
 }
 
 .welcome-container p {
-  font-size: 1.2em;
+  font-size: 1em; /* Tamaño uniforme y compacto */
   color: #555;
+  margin: 5px 0; /* Reducir espacio vertical */
 }

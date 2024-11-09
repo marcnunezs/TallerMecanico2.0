@@ -5,7 +5,14 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatDividerModule} from '@angular/material/divider';
 import { LoginPage } from './login.page';
+
+
 
 @NgModule({
   imports: [
@@ -13,7 +20,27 @@ import { LoginPage } from './login.page';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    LoginPageRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
+  ],
+  declarations: [
+    LoginPage
+  ]
 })
 export class LoginPageModule {}

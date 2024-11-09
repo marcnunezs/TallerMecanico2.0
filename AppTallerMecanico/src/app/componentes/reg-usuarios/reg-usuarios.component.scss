@@ -1,0 +1,62 @@
+/* General */
+ion-content {
+    background-color: #f9f9f9; /* Fondo claro para todo el contenido */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilos para los campos de entrada */
+mat-form-field {
+    width: 100%; /* Asegura que el campo ocupe el 100% del espacio disponible */
+    max-width: 400px; /* Tamaño máximo opcional */
+    background-color: #ffffff; /* Fondo claro para los campos */
+    margin-bottom: 15px; /* Espaciado entre campos */
+}
+
+input {
+    color: #ffffff; /* Color de texto oscuro para contraste */
+}
+
+/* Cambiar el color de las etiquetas */
+.mat-form-field-label {
+    color: #666; /* Color de etiqueta claro para mejor visibilidad */
+}
+
+/* Cambiar el color de la línea de enfoque */
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #ffffff; /* Fondo de la parte superior del campo */
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex .mat-form-field-infix {
+    background-color: transparent;
+}
+
+.mat-form-field-underline {
+    background-color: #4CAF50; /* Color de la línea de enfoque */
+}
+
+.mat-form-field-ripple {
+    background-color: #4CAF50; /* Color del ripple en la línea de enfoque */
+}
+
+/* Estilos para los botones */
+button.mat-raised-button {
+    margin-top: 15px;
+    width: 200px; /* Tamaño opcional del botón */
+}
+
+button.mat-raised-button[color="warn"],
+button.mat-raised-button[color="primary"] {
+    color: #fff; /* Texto claro para los botones */
+}
+
+/* Centrar el contenedor de entrada */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+}

@@ -1,24 +1,18 @@
 import { ChangeDetectionStrategy, Component, signal, OnInit} from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {FormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDividerModule} from '@angular/material/divider';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, NavigationExtras } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule, MatDividerModule, RouterModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class LoginPage implements OnInit{
-  username: string = '';
+  usuario: string = '';
   password: string = '';
+  errors: string[] = [];
 
   hide = signal(true);
   clickEvent(event: MouseEvent) {
@@ -26,17 +20,34 @@ export class LoginPage implements OnInit{
     event.stopPropagation();
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
+
+  async login() {
+    if (this.usuario && this.password) {
+      const isAuthenticated = await this.authService.signIn(this.usuario, this.password);
+
+      if (isAuthenticated) {
+        const navigationExtras: NavigationExtras = {
+          queryParams: {
+            user: this.usuario,
+          },
+        };
+        this.router.navigate(['/home'], navigationExtras);
+      }
+    } else {
+      alert('Por favor, ingresa tu correo y contraseña.')
+    }
+  }
 
   ngOnInit() {}
 
   isFormValid(): boolean {
-    return this.username !== '' && this.password !== '';
+    return this.usuario !== '' && this.password !== '';
   }
 
   Login() {
-    if (this.username !== '' && this.password !== '') {
-      this.router.navigate(['/home'], { queryParams: { username: this.username } });
+    if (this.usuario !== '' && this.password !== '') {
+      this.router.navigate(['/home'], { queryParams: { username: this.usuario } });
     } else {
       console.log("Por favor, completa todos los campos.");
     }

@@ -1,0 +1,39 @@
+<ion-content>
+  <mat-toolbar color="primary">
+    <h2>Lista de Usuarios</h2>
+  </mat-toolbar>
+
+  <form (ngSubmit)="editingUser ? saveUser() : addUser()">
+    <mat-form-field>
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="newUser.id" name="id" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="newUser.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Correo</mat-label>
+      <input matInput [(ngModel)]="newUser.email" name="email" required>
+    </mat-form-field>
+    
+    <button mat-raised-button color="accent" type="submit">{{ editingUser ? 'Save Changes' : 'Añadir Nuevo Usuario'}}</button>
+  </form>
+
+  <br>
+  <mat-list>
+    <mat-list-item *ngFor="let user of users">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ user.name }}</mat-card-title>
+          <p>ID: {{ user.id }}</p>
+          <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+
+          <button mat-raised-button color="primary" (click)="updateUser(user)">Actualizar</button>
+          <button mat-raised-button color="warn" (click)="deleteUser(user.id)">Eliminar</button>
+          <br><br><br>
+        </mat-card-header>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</ion-content>
