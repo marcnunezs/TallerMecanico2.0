@@ -12,7 +12,7 @@ export class QrScannerComponent {
 
   scannedData: string | null = null;
   qrCodeData: string = '';
-  generatedQRCode: string = ''; // Corrected variable
+  generatedQRCode: string = '';
   scanResult: string = '';
 
   constructor(private router: Router) { }
@@ -57,7 +57,7 @@ export class QrScannerComponent {
   generateQRCode() {
     QRCode.toDataURL(this.qrCodeData, { errorCorrectionLevel: 'H' })
       .then((url: string) => {
-        this.generatedQRCode = url; // Corrected assignment
+        this.generatedQRCode = url; 
       })
       .catch((err: any) => {
         console.error(err);

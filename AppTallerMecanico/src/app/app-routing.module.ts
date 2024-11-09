@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { authGuard } from './guards/auth.guard'; // Importa tu guard (ajusta la ruta si es necesario)
+import { authGuard } from './guards/auth.guard'; 
 import { Pagina404Page } from './pagina404/pagina404.page';
 
 const routes: Routes = [
   {
     path: 'home',
-    canActivate: [authGuard], // Aplica el guard a la ruta principal
+    canActivate: [authGuard], 
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
     
   },
