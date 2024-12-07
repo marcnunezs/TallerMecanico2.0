@@ -1,0 +1,22 @@
+ion-card {
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  ion-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  ion-card-title {
+    color: #3880ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  ion-card-content {
+    color: #666;
+    line-height: 1.5;
+  }
+  

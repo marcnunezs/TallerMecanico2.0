@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CrudfirebaseService } from './services/crudfirebase.service';
 import { Pagina404Page } from './pagina404/pagina404.page';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: RouteReuseStrategy, 

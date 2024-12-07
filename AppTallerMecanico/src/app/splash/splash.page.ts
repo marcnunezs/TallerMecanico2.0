@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
 })
 export class SplashPage implements OnInit {
 
-  constructor(public router: Router) {
+  constructor(private router: Router) {
     setTimeout(() => {
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/registro').catch(err => {
+        console.error('Error en la navegación:', err);
+      });
     }, 2000);
-   }
+  }
   
   ngOnInit() {
   }

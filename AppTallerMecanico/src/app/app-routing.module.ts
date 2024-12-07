@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'registro',
     pathMatch: 'full'
   },
   {
@@ -30,7 +30,17 @@ const routes: Routes = [
   {
     path: '**',
     component: Pagina404Page
+  },
+  {
+    path: 'lista-servicios',
+    loadChildren: () => import('./lista-servicios/lista-servicios.module').then( m => m.ListaServiciosPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   }
+
+
 
 ];
 

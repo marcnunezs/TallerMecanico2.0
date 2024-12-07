@@ -16,6 +16,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { QrScannerComponent } from '../componentes/qr-scanner/qr-scanner.component';
+import { ListaServiciosPageModule } from '../lista-servicios/lista-servicios.module';
 
 
 
@@ -32,7 +33,8 @@ import { QrScannerComponent } from '../componentes/qr-scanner/qr-scanner.compone
     MatFormFieldModule,
     MatCardModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    ListaServiciosPageModule
   ],
   declarations: [
     HomePage,

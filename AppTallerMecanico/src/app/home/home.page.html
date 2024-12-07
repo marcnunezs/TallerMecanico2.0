@@ -29,6 +29,10 @@
     <p>Nos alegra verte nuevamente. ¡Esperamos que disfrutes de tu tiempo aquí!</p>
   </div>
 
+  <ng-container *ngIf="selectedMenuItem === 'Home'">
+    <app-lista-servicios></app-lista-servicios>
+  </ng-container>
+
   <ng-container *ngIf="selectedMenuItem === 'Contacto'">
     <app-contacto></app-contacto>
   </ng-container>
@@ -45,6 +49,24 @@
     <app-qr-scanner></app-qr-scanner>
   </ng-container>
 
+  <ion-footer>
+    <ion-toolbar>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <mat-icon>facebook</mat-icon>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <mat-icon>instagram</mat-icon>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <mat-icon>twitter</mat-icon>
+          </a>
+        </div>
+        <p class="footer-text">© 2024 ServiExpress. Todos los derechos reservados.</p>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+  
 
 </ion-content>
->>>>>>> Stashed changes
