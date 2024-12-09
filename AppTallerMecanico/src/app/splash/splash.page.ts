@@ -7,11 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./splash.page.scss'],
 })
 export class SplashPage implements OnInit {
-  constructor(private router: Router) {}
 
-  ngOnInit() {
+  constructor(private router: Router) {
     setTimeout(() => {
-      this.router.navigate(['/login']); 
+      this.router.navigateByUrl('/registro').catch(err => {
+        console.error('Error en la navegación:', err);
+      });
     }, 2000);
   }
+  
+  ngOnInit() {
+  }
+
 }
