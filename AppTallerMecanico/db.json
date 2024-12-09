@@ -1,19 +1,32 @@
 {
-  "users": [
+  "reviews": [
     {
       "id": "1",
-      "name": "John Doe A",
-      "email": "john@example.com"
+      "productId": "101",
+      "userName": "Juan",
+      "rating": 5,
+      "comment": "¡Excelente servicio!"
     },
     {
       "id": "2",
-      "name": "Jane Doe",
-      "email": "jane@example.com"
+      "productId": "102",
+      "userName": "Maria",
+      "rating": 4,
+      "comment": "Buena atención."
     },
     {
-      "id": 3,
-      "name": "usuario",
-      "email": "usuario@usuario.cl"
+      "id": "6436",
+      "productId": "OL4oKDEUK8mfx7tWAmPP",
+      "userName": "Marcelo Cliente",
+      "rating": 5,
+      "comment": "Muy bueno"
+    },
+    {
+      "id": "e790",
+      "productId": "OL4oKDEUK8mfx7tWAmPP",
+      "userName": "Marcelo Cliente 2",
+      "rating": 3,
+      "comment": "Mas o menos"
     }
   ]
 }

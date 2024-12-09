@@ -1,0 +1,62 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="toolbar-left">
+    <img src="assets/images/logo serviexpress.webp" alt="Logo ServiExpress" class="logo" />
+    <span class="title">ServiExpress</span>
+  </div>
+
+  <div class="toolbar-right">
+    <span>Bienvenido, {{ userName }}</span>
+    <button mat-button class="logout-button" (click)="logout()">Cerrar Sesión</button>
+  </div>
+</mat-toolbar>
+
+
+<div *ngIf="!loading; else loadingSpinner" class="content-container">
+ 
+  <div class="menu">
+    <button mat-raised-button color="primary" (click)="changeView('home')">Inicio</button>
+    <button mat-raised-button color="primary" *ngIf="userRole === 'proveedor'" (click)="changeView('catalog')">
+      Gestión de Catálogo
+    </button>
+     <button mat-raised-button color="primary" *ngIf="userRole === 'cliente'" (click)="changeView('solicitar-servicio')">
+      Solicitar Servicio/Producto
+    </button>
+    <button mat-raised-button color="primary" (click)="changeView('communications')">
+      Comunicaciones
+    </button>
+  </div>
+
+  <div *ngIf="currentView === 'home'" class="section">
+    <h2>Resumen General</h2>
+    <p>Bienvenido al panel principal.</p>
+
+    <mat-card class="activity-feed">
+      <mat-card-title>Actividades Recientes</mat-card-title>
+      <mat-list>
+        <mat-list-item *ngFor="let activity of recentActivities">
+          <p>{{ activity.description }} - <small>{{ activity.timestamp }}</small></p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+
+  <div *ngIf="currentView === 'catalog'" class="section">
+    <app-gestion-catalogo></app-gestion-catalogo>
+  </div>
+
+  <div *ngIf="currentView === 'communications'">
+    <app-comunicaciones></app-comunicaciones>
+  </div>
+
+  <div *ngIf="currentView === 'solicitar-servicio'" class="section">
+    <app-solicitar-servicio></app-solicitar-servicio>
+  </div>
+  
+</div>
+
+<ng-template #loadingSpinner>
+  <div class="spinner-container">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Cargando...</p>
+  </div>
+</ng-template>
