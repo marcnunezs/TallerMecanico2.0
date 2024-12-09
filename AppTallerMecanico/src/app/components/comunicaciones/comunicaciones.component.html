@@ -1,0 +1,56 @@
+<mat-card class="comunicaciones-card">
+  <mat-card-title>Bandeja de Comunicaciones</mat-card-title>
+  <mat-card-content>
+    
+    <button mat-raised-button color="primary" (click)="openSendMessageDialog()">
+      Enviar Mensaje
+    </button>
+
+    
+    <div *ngIf="messages.length > 0; else noMessages" class="message-container">
+      <mat-card *ngFor="let message of messages" class="message-card">
+        <div class="message-header">
+          <div class="avatar">{{ message.sender.charAt(0) }}</div>
+          <div>
+            <strong>{{ message.subject }}</strong>
+            <p class="meta">{{ message.createdAt | date: 'short' }}</p>
+          </div>
+        </div>
+
+        <div class="message-content">
+          <p><strong>De:</strong> {{ message.sender }}</p>
+          <p><strong>Para:</strong> {{ message.recipient }}</p>
+          <p>{{ message.content }}</p>
+        </div>
+
+        
+        <div *ngIf="message.responses?.length > 0" class="responses-container">
+          <h4>Respuestas:</h4>
+          <mat-list class="response-list">
+            <mat-list-item *ngFor="let response of message.responses" class="response-item">
+              <div class="response-content">
+                <p><strong>{{ response.respondedBy }}:</strong> {{ response.responseText }}</p>
+                <small class="response-date">{{ response.createdAt?.toDate() | date: 'short' }}</small>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+        
+        <div *ngIf="!message.responses || message.responses.length === 0" class="no-responses">
+          <p>No hay respuestas aún.</p>
+        </div>
+
+        
+        <div class="actions">
+          <button mat-button color="accent" (click)="openReplyDialog(message.id)">Responder</button>
+        </div>
+      </mat-card>
+    </div>
+
+    
+    <ng-template #noMessages>
+      <p class="no-messages">No hay mensajes recientes.</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

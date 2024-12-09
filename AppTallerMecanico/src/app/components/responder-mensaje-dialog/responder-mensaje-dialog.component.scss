@@ -1,0 +1,42 @@
+
+mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  
+    mat-form-field {
+      width: 100%; 
+    }
+  
+    textarea {
+      resize: none; 
+    }
+  }
+  
+ 
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  
+    button {
+      margin-left: 8px;
+    }
+  }
+  
+  
+  button[mat-raised-button] {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+ 
+  mat-dialog-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #4caf50; 
+    margin-bottom: 8px;
+  }
+  

@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Responder Mensaje</h2>
+<mat-dialog-content>
+  <form [formGroup]="responseForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Respuesta</mat-label>
+      <textarea matInput formControlName="responseText" rows="4" placeholder="Escribe tu respuesta aquí"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSave()" (click)="vibrate()" [disabled]="responseForm.invalid">Guardar</button>
+</mat-dialog-actions>
