@@ -20,23 +20,27 @@ export class AuthService {
     try {
       const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
       const uid = userCredential.user?.uid;
-
-      if (uid) {
-        await this.firestore.collection('users').doc(uid).set({
-          uid,
-          email,
-          name: additionalData?.name || '',
-          role: additionalData?.role || 'cliente',
-          createdAt: new Date(),
-        });
-        console.log('Usuario registrado y guardado en Firestore');
+  
+      if (!uid) {
+        throw new Error('UID not returned during registration');
       }
+  
+      await this.firestore.collection('users').doc(uid).set({
+        uid,
+        email,
+        name: additionalData?.name || '',
+        role: additionalData?.role || 'cliente',
+        createdAt: new Date(),
+      });
+      console.log('Usuario registrado y guardado en Firestore');
+  
       return userCredential;
     } catch (error) {
       this.handleFirebaseError(error, 'Error al registrar usuario');
       throw error;
     }
   }
+  
 
   getAuthState(): Observable<any> {
     return this.afAuth.authState;

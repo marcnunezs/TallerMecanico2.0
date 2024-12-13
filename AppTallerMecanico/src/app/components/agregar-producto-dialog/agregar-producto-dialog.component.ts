@@ -25,6 +25,10 @@ export class AgregarProductoDialogComponent {
     });
   }
 
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
+
   onSave() {
     if (this.productForm.valid) {
       const productData = {
